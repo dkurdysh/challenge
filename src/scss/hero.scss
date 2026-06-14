@@ -1,0 +1,10 @@
+@use "base/mixins" as mixins;
+@use "base/variables" as vars;
+
+.hero {
+  position: relative;
+  z-index: 1;
+  padding: 127px 0 100px 0;
+  min-height: 610px;
+  background: linear-gradient(180deg, #d8dacb 0%, #ddfb21 43.62%, #d8dacb 100%);
+}

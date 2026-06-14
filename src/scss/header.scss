@@ -1,0 +1,30 @@
+@use "base/mixins" as mixins;
+@use "base/variables" as vars;
+
+.header {
+  &__wrapper {
+    display: flex;
+    align-items: flex-start;
+    padding: 40px 0;
+  }
+}
+
+@media #{vars.$small} {
+  .header {
+    &__wrapper {
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+    }
+  }
+}
+
+@media #{vars.$xsmall} {
+  .header {
+    &__wrapper {
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+    }
+  }
+}
