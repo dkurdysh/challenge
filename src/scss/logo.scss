@@ -1,0 +1,7 @@
+@use "base/mixins" as mixins;
+@use "base/variables" as vars;
+
+.logo {
+  position: relative;
+  z-index: 1;
+}

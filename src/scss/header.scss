@@ -2,29 +2,80 @@
 @use "base/variables" as vars;
 
 .header {
+  position: relative;
+  z-index: 1;
   &__wrapper {
     display: flex;
-    align-items: flex-start;
-    padding: 40px 0;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 0;
+  }
+
+  &__burger {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    flex-shrink: 0;
+    padding: 4px;
+    z-index: 100;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: none;
+
+    & i {
+      display: block;
+      position: relative;
+      height: 2px;
+      width: 20px;
+      border-radius: 2px;
+      background: #fff;
+      left: 0;
+      top: 0;
+      margin-bottom: 4px;
+      transition:
+        opacity 0.3s,
+        transform 0.3s;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    @media #{vars.$small} {
+      display: flex;
+    }
   }
 }
 
 @media #{vars.$small} {
   .header {
-    &__wrapper {
-      flex-direction: column;
-      align-items: center;
-      gap: 40px;
-    }
   }
 }
 
 @media #{vars.$xsmall} {
   .header {
-    &__wrapper {
-      flex-direction: column;
-      align-items: center;
-      gap: 40px;
+  }
+}
+
+body.is-nav-open {
+  overflow: hidden;
+
+  .header__burger {
+    & i {
+      transform: rotate(45deg);
+
+      &:first-child {
+        opacity: 0;
+      }
+
+      &:last-child {
+        transform: rotate(-45deg);
+        top: -6px;
+      }
     }
   }
 }
