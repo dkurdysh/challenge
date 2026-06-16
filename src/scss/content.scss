@@ -1,0 +1,246 @@
+@use "base/mixins" as mixins;
+@use "base/variables" as vars;
+
+.content {
+  margin-bottom: 80px;
+
+  cursor:
+    url("../assets/images/pointinghand.png") 16 16,
+    auto;
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 300px 300px 560px 300px;
+  }
+
+  &__decor {
+    position: absolute;
+
+    &--large-star {
+      top: 122px;
+      left: 154px;
+      animation: cloudfloat 5s infinite;
+    }
+    &--small-star {
+      animation: cloudfloatsmall 5s infinite;
+    }
+    &--small-star-1 {
+      top: 50px;
+      right: 50px;
+    }
+    &--small-star-2 {
+      bottom: 50px;
+      right: 180px;
+    }
+  }
+
+  &__list {
+    display: contents;
+  }
+
+  &__item {
+    position: absolute;
+
+    &--1 {
+      top: 356px;
+      left: 18px;
+    }
+
+    &--2 {
+      bottom: 120px;
+      left: 300px;
+
+      & .content__item-tooltip {
+        left: -30px;
+      }
+    }
+
+    &--3 {
+      bottom: 320px;
+      left: 50%;
+    }
+
+    &--4 {
+      right: 0;
+      top: 22%;
+    }
+  }
+
+  &__item-tooltip {
+    position: absolute;
+    width: 300px;
+    text-align: center;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    opacity: 0;
+  }
+
+  &__item-tooltip-days {
+    text-transform: uppercase;
+    padding: 8px 16px;
+    background-color: #fff;
+    color: #8f5cfb;
+    font-weight: 800;
+    letter-spacing: -2%;
+    max-width: max-content;
+    border-radius: 60px;
+  }
+
+  &__item-tooltip-name {
+    font-size: 32px;
+    letter-spacing: -1%;
+    font-weight: bold;
+  }
+
+  &__item-tooltip-text {
+    opacity: 0.6;
+    line-height: 32px;
+    letter-spacing: -2%;
+  }
+}
+
+@media (hover: hover) {
+  .content {
+    &__item:hover > .content__item-tooltip {
+      opacity: 1;
+    }
+  }
+}
+
+@media #{vars.$medium} {
+  .content {
+    &__wrapper {
+      flex-direction: column;
+      padding: 0;
+      padding-top: 120px;
+    }
+
+    &__decor {
+      position: absolute;
+
+      &--large-star {
+        top: 50px;
+        left: -50px;
+      }
+      &--small-star-1 {
+        top: 222px;
+        right: -30px;
+      }
+      &--small-star-2 {
+        display: none;
+      }
+    }
+
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      width: 80%;
+      justify-content: space-between;
+      margin: 0 auto;
+    }
+
+    &__item {
+      position: relative;
+
+      &--1 {
+        top: auto;
+        left: auto;
+      }
+
+      &--2 {
+        bottom: auto;
+        left: auto;
+
+        & .content__item-tooltip {
+          left: auto;
+        }
+      }
+
+      &--3 {
+        bottom: auto;
+        left: auto;
+      }
+
+      &--4 {
+        right: auto;
+        top: auto;
+      }
+    }
+
+    &__item-tooltip {
+      position: relative;
+      width: 300px;
+      text-align: center;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      pointer-events: none;
+      transition: opacity 0.3s;
+      opacity: 1;
+    }
+
+    &__item-tooltip-days {
+      text-transform: uppercase;
+      padding: 8px 16px;
+      background-color: #fff;
+      color: #8f5cfb;
+      font-weight: 800;
+      letter-spacing: -2%;
+      max-width: max-content;
+      border-radius: 60px;
+    }
+
+    &__item-tooltip-name {
+      font-size: 32px;
+      letter-spacing: -1%;
+      font-weight: bold;
+    }
+
+    &__item-tooltip-text {
+      opacity: 0.6;
+      line-height: 32px;
+      letter-spacing: -2%;
+    }
+  }
+}
+
+@media #{vars.$small} {
+  .content {
+  }
+}
+
+@keyframes cloudfloat {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(15px, -10px) scale(0.9);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes cloudfloatsmall {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(18px, 11px) scale(1.05);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
