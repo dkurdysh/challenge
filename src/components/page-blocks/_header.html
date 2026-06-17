@@ -3,7 +3,14 @@
     <div class="header__wrapper">
       <div class="logo">
         <a href="/">
-          <img class="logo__img" src="assets/images/logo.png" alt="site logo" />
+          <picture>
+            <source
+              media="only screen and (max-width: 767px)"
+              srcset="assets/images/logo-mob.png"
+            />
+
+            <img class="logo__img" src="assets/images/logo.png" alt="" />
+          </picture>
         </a>
       </div>
 

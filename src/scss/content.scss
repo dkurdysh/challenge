@@ -2,8 +2,6 @@
 @use "base/variables" as vars;
 
 .content {
-  margin-bottom: 80px;
-
   cursor:
     url("../assets/images/pointinghand.png") 16 16,
     auto;
@@ -142,14 +140,20 @@
 
     &__list {
       display: flex;
+      gap: 20px;
       flex-wrap: wrap;
-      width: 80%;
       justify-content: space-between;
       margin: 0 auto;
+      padding-top: 100px;
     }
 
     &__item {
       position: relative;
+      width: calc(50% - 10px);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
 
       &--1 {
         top: auto;
@@ -218,6 +222,54 @@
 
 @media #{vars.$small} {
   .content {
+    &__list {
+      padding-top: 50px;
+    }
+
+    &__decor {
+      position: absolute;
+
+      &--large-star {
+        display: none;
+      }
+
+      &--small-star-1 {
+        top: 0;
+        right: 0;
+        width: 110px;
+        aspect-ratio: 1;
+      }
+
+      &--small-star-2 {
+        display: flex;
+        top: 30px;
+        right: auto;
+        width: 110px;
+        aspect-ratio: 1;
+        left: -30px;
+      }
+    }
+    &__item-tooltip {
+      width: 100%;
+      font-size: 14px;
+      gap: 12px;
+    }
+
+    &__item-tooltip-name {
+      font-size: 16px;
+    }
+
+    &__item-tooltip-text {
+      line-height: 16px;
+      letter-spacing: -1%;
+    }
+
+    &__item {
+      img {
+        width: 140px;
+        height: 140px;
+      }
+    }
   }
 }
 

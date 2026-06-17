@@ -1,0 +1,36 @@
+@use "base/mixins" as mixins;
+@use "base/variables" as vars;
+
+.today {
+  padding: 100px 0;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    & span {
+      text-transform: uppercase;
+      text-align: center;
+      font-size: 80px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -3%;
+    }
+  }
+}
+
+@media #{vars.$xsmall} {
+  .today {
+    &__wrapper {
+      gap: 12px;
+
+      & span {
+        font-size: 32px;
+        letter-spacing: -1%;
+      }
+    }
+  }
+}
