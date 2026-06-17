@@ -1,0 +1,75 @@
+@use "base/mixins" as mixins;
+@use "base/variables" as vars;
+
+.ready {
+  &__wrapper {
+    padding: 200px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & span {
+      color: #fff;
+      font-weight: 700;
+      font-size: 80px;
+      line-height: 100%;
+      letter-spacing: -3%;
+      text-align: center;
+    }
+
+    & a {
+      display: inline-block;
+      padding: 30px;
+      background-color: #fff;
+      color: #8f5cfb;
+      font-weight: 800;
+      font-size: 24px;
+      letter-spacing: -2%;
+      text-align: center;
+      border-radius: 150px;
+      box-shadow: 5px 3px 4px 0px #0000004d;
+      margin-top: 40px;
+    }
+  }
+}
+
+@media (hover: hover) {
+  .ready {
+    &__wrapper {
+      & a:hover {
+        box-shadow: 2px -1px 9px 2px #cfcfcf66 inset;
+        box-shadow: 5px 4px 5px 0px #0000004d inset;
+        color: #949494;
+      }
+    }
+  }
+}
+
+@media #{vars.$small} {
+  .ready {
+    &__wrapper {
+      padding: 160px 0;
+    }
+  }
+}
+
+@media #{vars.$xsmall} {
+  .ready {
+    &__wrapper {
+      padding: 100px 0;
+
+      & span {
+        font-size: 32px;
+        letter-spacing: -1%;
+      }
+
+      & a {
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: 0%;
+        margin-top: 24px;
+        padding: 20px 32px;
+      }
+    }
+  }
+}
