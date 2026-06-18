@@ -115,3 +115,68 @@ class StepsSlider {
 document.addEventListener('DOMContentLoaded', () => {
 	new StepsSlider('.steps__slider');
 });
+
+class AccessForm {
+  constructor(section) {
+    this.section = section;
+
+    this.form = section.querySelector('.access__form');
+    this.input = section.querySelector('.access__input');
+    this.button = section.querySelector('.access__submit');
+    this.success = section.querySelector('.access__success');
+
+    this.disabledClass = 'is-disabled';
+    this.successClass = 'is-success';
+
+    this.init();
+  }
+
+  init() {
+    this.input.addEventListener('input', () => this.onInput());
+    this.form.addEventListener('submit', (e) => this.onSubmit(e));
+
+    this.updateButtonState();
+  }
+
+  onInput() {
+    this.updateButtonState();
+  }
+
+  updateButtonState() {
+    const value = this.input.value.trim();
+
+    if (value.length > 5) {
+      this.button.classList.remove(this.disabledClass);
+      this.button.disabled = false;
+    } else {
+      this.button.classList.add(this.disabledClass);
+      this.button.disabled = true;
+    }
+  }
+
+  isValidEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+
+  onSubmit(e) {
+    e.preventDefault();
+
+    const email = this.input.value.trim();
+
+    if (!this.isValidEmail(email)) return;
+
+    this.success.classList.add(this.successClass);
+
+    this.form.reset();
+    this.updateButtonState();
+  }
+}
+
+// init только если есть форма
+document.addEventListener('DOMContentLoaded', () => {
+  const section = document.querySelector('.access');
+
+  if (section) {
+    new AccessForm(section);
+  }
+});
