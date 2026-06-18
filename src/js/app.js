@@ -166,7 +166,7 @@ class AccessForm {
     if (!this.isValidEmail(email)) return;
 
     this.success.classList.add(this.successClass);
-
+	this.form.classList.add(this.successClass);
     this.form.reset();
     this.updateButtonState();
   }

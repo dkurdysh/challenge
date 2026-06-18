@@ -19,23 +19,17 @@ body {
 }
 
 body {
-  & h1,
-  h2,
-  h3 {
-    // font-family: "HagridTrial", sans-serif;
-  }
+  background: linear-gradient(
+    180deg,
+    #8f5cfb 0%,
+    #ffffff 13.53%,
+    #8f5cfb 39.77%,
+    #8f5cfb 69.37%,
+    #f6f2ff 92.47%,
+    #ffffff 100%
+  );
 
-  //   background: linear-gradient(
-  //     180deg,
-  //     #8f5cfb 0%,
-  //     #ffffff 13.53%,
-  //     #8f5cfb 39.77%,
-  //     #8f5cfb 69.37%,
-  //     #f6f2ff 92.47%,
-  //     #ffffff 100%
-  //   );
-
-  background-color: #8f5cfb;
+  //   background-color: #8f5cfb;
 
   font-weight: 400;
   font-size: 16px;
@@ -49,12 +43,6 @@ body {
 
   &.is-overflow {
     overflow: hidden;
-  }
-}
-
-@media #{vars.$small} {
-  body {
-    // font-size: 14px;
   }
 }
 

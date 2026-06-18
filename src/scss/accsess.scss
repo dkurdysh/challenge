@@ -72,6 +72,9 @@
   &__form {
     position: relative;
     width: 806px;
+    &.is-success {
+      pointer-events: none;
+    }
   }
 
   &__input {
@@ -115,6 +118,7 @@
       box-shadow: 2px -1px 9px 2px #cfcfcf66 inset;
       box-shadow: 5px 4px 5px 0px #0000004d inset;
       color: #94949485;
+      pointer-events: none;
     }
   }
 
