@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+@@include('components/page-blocks/_head.html',{
+	"lang":"ru",
+	"title":"Challenge | 404",
+	"description":"",
+	"keywords":"",
+	"favicon":"assets/favicons/favicon",
+})
+
+<body class="error404">
+	@@include('components/page-blocks/_header.html')
+
+	<div class="wrapper">
+
+		<main class="main">
+			<h1 class="hidden">New challenge</h1>
+
+			<section class="error">
+				<picture>
+					<source
+						media="only screen and (max-width: 767px)"
+						srcset="assets/images/404-m.png">
+
+					<source
+						media="only screen and (max-width: 1199px)"
+						srcset="assets/images/404-t.png">
+
+					<img
+						src="assets/images/404.png"
+						alt="">
+				</picture>
+				<div class="error__message">
+					тут должен быть контент, но он решил начать с понедельника, не будь как он — возвращайся на <a href="/">главную</a>
+				</div>
+			</section>
+		</main>
+
+		@@include('components/page-blocks/_footer.html')
+	</div>
+
+	@@include('components/page-blocks/_scripts.html')
+</body>
+
+</html>
+
+

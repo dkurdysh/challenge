@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+@@include('components/page-blocks/_head.html',{
+	"lang":"ru",
+	"title":"Challenge | protocol",
+	"description":"",
+	"keywords":"",
+	"favicon":"assets/favicons/favicon",
+})
+
+<body class="protocol">
+	@@include('components/page-blocks/_header.html')
+
+	<div class="wrapper">
+
+		<main class="main">
+			<h1 class="hidden">New challenge | protocol</h1>
+
+			<section class="book">
+	<div class="container">
+		<div class="book__content">
+			<div class="book__list book__part">
+				<h2 class="book__list-caption">
+					разделы:
+				</h2>
+
+				<div class="book__list-items">
+					<button class="book__list-item is-active" data-index="0">
+						точка&nbsp;входа
+					</button>
+
+					<button class="book__list-item" data-index="1">
+						проверка&nbsp;состояния
+					</button>
+
+					<button class="book__list-item" data-index="2">
+						выбор&nbsp;режима
+					</button>
+
+					<button class="book__list-item" data-index="3">
+						старт&nbsp;челленджа
+					</button>
+
+					<button class="book__list-item" data-index="4">
+						новая&nbsp;привычка
+					</button>
+				</div>
+			</div>
+
+			<div class="book__preview book__part">
+				<img
+					class="book__image"
+					src="assets/images/book-slide-1.png"
+					alt=""
+				>
+			</div>
+
+			<div class="book__text book__part">
+				ты впервые подключаешься к системе челленджей. Здесь начинается маршрут: приложение помогает понять, с чего начать и какой первый шаг будет достаточно маленьким, чтобы его действительно выполнить
+			</div>
+		</div>
+	</div>
+</section>
+
+			<!-- <section class="book">
+				<div class="container">
+					<div class="book__content">
+						<div class="book__list book__part">
+							<h2 class="book__list-caption">
+								разделы:
+							</h2>
+							<div class="book__list-items">
+								<button class="book__list-item is-active">точка&nbsp;входа</button>
+								<button class="book__list-item">проверка&nbsp;состояния</button>
+								<button class="book__list-item">выбор&nbsp;режима</button>
+								<button class="book__list-item">старт&nbsp;челленджа</button>
+								<button class="book__list-item">новая&nbsp;привычка</button>
+							</div>
+						</div>
+
+						<div class="book__preview book__part">
+							<img src="assets/images/book-slide-1.png" alt="">
+						</div>
+
+						<div class="book__text book__part">
+							ты впервые подключаешься к системе челленджей. Здесь начинается маршрут: приложение помогает понять, с чего начать и какой первый шаг будет достаточно маленьким, чтобы его действительно выполнить
+						</div>
+					</div>
+				</div>
+			</section> -->
+
+			<a href="/" class="book link">
+				Читать полную версию
+			</a>
+		</main>
+
+		@@include('components/page-blocks/_footer.html')
+	</div>
+
+	@@include('components/page-blocks/_scripts.html')
+</body>
+
+</html>
+
+

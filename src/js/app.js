@@ -113,7 +113,9 @@ class StepsSlider {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-	new StepsSlider('.steps__slider');
+	if (document.querySelector('.steps__slider')) {
+		new StepsSlider('.steps__slider');
+	}
 });
 
 class AccessForm {
@@ -180,3 +182,68 @@ document.addEventListener('DOMContentLoaded', () => {
     new AccessForm(section);
   }
 });
+
+const bookData = [
+	{
+		image: 'assets/images/book-slide-1.png',
+		text: 'ты впервые подключаешься к системе челленджей. Здесь начинается маршрут: приложение помогает понять, с чего начать и какой первый шаг будет достаточно маленьким, чтобы его действительно выполнить'
+	},
+	{
+		image: 'assets/images/book-slide-2.png',
+		text: 'перед стартом важно понять своё состояние: сколько у тебя энергии, времени, мотивации и какой формат изменений тебе сейчас подходит. это не тест ради теста, а настройка челленджа под реальную жизнь'
+	},
+	{
+		image: 'assets/images/book-slide-3.png',
+		text: 'ты выбираешь профиль прохождения: мягкий, активный, социальный, творческий или дисциплинарный. от этого зависит темп заданий, сложность и способ поддержки внутри приложения'
+	},
+	{
+		image: 'assets/images/book-slide-4.png',
+		text: 'челлендж запускается не с большого обещания, а с маленького действия. приложение даёт первое задание, которое помогает почувствовать движение уже сегодня'
+	},
+	{
+		image: 'assets/images/book-slide-5.png',
+		text: 'финал челленджа — это момент, когда действие выходит за пределы экрана. новая привычка, навык или опыт становятся частью повседневной жизни'
+	}
+];
+
+class BookSlider {
+	constructor(selector, data) {
+		this.root = document.querySelector(selector);
+
+		if (!this.root) return;
+
+		this.data = data;
+
+		this.buttons = this.root.querySelectorAll('.book__list-item');
+		this.text = this.root.querySelector('.book__text');
+		this.image = this.root.querySelector('.book__image');
+
+		this.init();
+	}
+
+	init() {
+		this.buttons.forEach(button => {
+			button.addEventListener('click', () => {
+				this.setSlide(Number(button.dataset.index));
+			});
+		});
+	}
+
+	setSlide(index) {
+		const slide = this.data[index];
+
+		if (!slide) return;
+
+		this.buttons.forEach(btn => {
+			btn.classList.toggle(
+				'is-active',
+				Number(btn.dataset.index) === index
+			);
+		});
+
+		this.text.textContent = slide.text;
+		this.image.src = slide.image;
+	}
+}
+
+new BookSlider('.book', bookData);

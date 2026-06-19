@@ -29,6 +29,11 @@ body {
     #ffffff 100%
   );
 
+  &.protocol,
+  &.error404 {
+    background: linear-gradient(180deg, #8f5cfb 0%, #ffffff 70%);
+  }
+
   //   background-color: #8f5cfb;
 
   font-weight: 400;
