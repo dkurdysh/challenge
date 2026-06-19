@@ -1,0 +1,165 @@
+@use "base/mixins" as mixins;
+@use "base/variables" as vars;
+
+.challenges {
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    row-gap: 30px;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    width: calc(100% / 3 - 16px);
+
+    &:last-child {
+      margin-right: auto;
+      margin-left: 16px;
+    }
+  }
+
+  &__card {
+    background-color: #ffffff;
+    border-radius: 48px;
+    padding: 32px 16px 16px 16px;
+    text-transform: uppercase;
+    color: #949494;
+    font-weight: 800;
+
+    &.is-disabled {
+      opacity: 0.5;
+    }
+  }
+
+  &__name {
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: -2%;
+    margin-bottom: 12px;
+    margin-left: 10px;
+  }
+
+  &__info {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+    margin-left: 10px;
+
+    & span {
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: 0%;
+    }
+  }
+
+  &__banner {
+    width: 100%;
+    position: relative;
+    height: 590px;
+    border-radius: 32px;
+    overflow: hidden;
+
+    & img {
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__link {
+    width: 100%;
+    display: inline-block;
+    padding: 30px;
+    background-color: #fff;
+    color: #8f5cfb;
+    font-weight: 800;
+    font-size: 24px;
+    letter-spacing: -2%;
+    text-align: center;
+    border-radius: 150px;
+    box-shadow: 5px 3px 4px 0px #0000004d;
+    margin-top: 12px;
+    transition:
+      color 0.3s,
+      box-shadow 0.3s;
+
+    &.is-disabled {
+      background-color: #fafafa;
+      box-shadow: 2px -1px 9px 2px #cfcfcf66 inset;
+      box-shadow: 5px 4px 5px 0px #0000004d inset;
+      color: #94949485;
+      pointer-events: none;
+    }
+  }
+}
+
+@media #{vars.$small} {
+  .challenges {
+    &__item {
+      width: calc(100% / 2 - 18px);
+
+      &:last-child {
+        margin-right: auto;
+        margin-left: 18px;
+      }
+    }
+
+    &__card {
+      padding-top: 24px;
+      border-radius: 40px;
+    }
+
+    &__name {
+      font-size: 20px;
+      margin-left: 0;
+    }
+
+    &__info {
+      display: flex;
+      margin-bottom: 16px;
+      margin-left: 0;
+
+      & span {
+        font-size: 14px;
+        line-height: 18px;
+      }
+    }
+
+    &__banner {
+      height: 460px;
+    }
+
+    &__link {
+      font-size: 14px;
+      line-height: 18px;
+      letter-spacing: 0%;
+      margin-top: 12px;
+      padding: 20px 32px;
+    }
+  }
+}
+
+@media #{vars.$xsmall} {
+  .challenges {
+    &__item {
+      width: 100%;
+
+      &:last-child {
+        margin-right: 0;
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+@media (hover: hover) {
+  .challenges {
+    &__link:hover {
+      box-shadow: 2px -1px 9px 2px #cfcfcf66 inset;
+      box-shadow: 5px 4px 5px 0px #0000004d inset;
+      color: #949494;
+    }
+  }
+}

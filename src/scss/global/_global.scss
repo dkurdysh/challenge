@@ -162,7 +162,38 @@ button::-moz-selection {
   background: transparent;
 }
 
+@media #{vars.$small} {
+  body {
+    // t
+    background: linear-gradient(
+      180deg,
+      #8f5cfb 0%,
+      #ffffff 7.82%,
+      #e8ddfe 12.33%,
+      #8f5cfb 39.77%,
+      #8f5cfb 69.37%,
+      #f6f2ff 92.47%,
+      #ffffff 100%
+    );
+  }
+}
+
 @media #{vars.$xsmall} {
   .container {
+    padding: 0 10px;
+  }
+
+  body {
+    // m
+    background: linear-gradient(
+      180deg,
+      #8f5cfb 0%,
+      #ffffff 10.96%,
+      #d2bdfd 17.57%,
+      #8f5cfb 39.77%,
+      #8f5cfb 69.37%,
+      #f6f2ff 92.47%,
+      #ffffff 100%
+    );
   }
 }

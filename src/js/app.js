@@ -3,6 +3,30 @@ console.log("init new challenges app");
 const navToggle = document.querySelector('[data-element~="navToggle"]');
 const body = document.body;
 
+
+const bookData = [
+	{
+		image: 'assets/images/book-slide-1.png',
+		text: 'ты впервые подключаешься к системе челленджей. Здесь начинается маршрут: приложение помогает понять, с чего начать и какой первый шаг будет достаточно маленьким, чтобы его действительно выполнить'
+	},
+	{
+		image: 'assets/images/book-slide-2.png',
+		text: 'перед стартом важно понять своё состояние: сколько у тебя энергии, времени, мотивации и какой формат изменений тебе сейчас подходит. это не тест ради теста, а настройка челленджа под реальную жизнь'
+	},
+	{
+		image: 'assets/images/book-slide-3.png',
+		text: 'ты выбираешь профиль прохождения: мягкий, активный, социальный, творческий или дисциплинарный. от этого зависит темп заданий, сложность и способ поддержки внутри приложения'
+	},
+	{
+		image: 'assets/images/book-slide-4.png',
+		text: 'челлендж запускается не с большого обещания, а с маленького действия. приложение даёт первое задание, которое помогает почувствовать движение уже сегодня'
+	},
+	{
+		image: 'assets/images/book-slide-5.png',
+		text: 'финал челленджа — это момент, когда действие выходит за пределы экрана. новая привычка, навык или опыт становятся частью повседневной жизни'
+	}
+];
+
 const toggleNav = () => {
   body.classList.toggle("is-nav-open");
 };
@@ -116,6 +140,16 @@ document.addEventListener('DOMContentLoaded', () => {
 	if (document.querySelector('.steps__slider')) {
 		new StepsSlider('.steps__slider');
 	}
+
+	if (document.querySelector('.book--js')) {
+		new BookSlider('.book--js', bookData);
+	}
+
+	const section = document.querySelector('.access');
+
+	if (section) {
+		new AccessForm(section);
+	}
 });
 
 class AccessForm {
@@ -174,38 +208,6 @@ class AccessForm {
   }
 }
 
-// init только если есть форма
-document.addEventListener('DOMContentLoaded', () => {
-  const section = document.querySelector('.access');
-
-  if (section) {
-    new AccessForm(section);
-  }
-});
-
-const bookData = [
-	{
-		image: 'assets/images/book-slide-1.png',
-		text: 'ты впервые подключаешься к системе челленджей. Здесь начинается маршрут: приложение помогает понять, с чего начать и какой первый шаг будет достаточно маленьким, чтобы его действительно выполнить'
-	},
-	{
-		image: 'assets/images/book-slide-2.png',
-		text: 'перед стартом важно понять своё состояние: сколько у тебя энергии, времени, мотивации и какой формат изменений тебе сейчас подходит. это не тест ради теста, а настройка челленджа под реальную жизнь'
-	},
-	{
-		image: 'assets/images/book-slide-3.png',
-		text: 'ты выбираешь профиль прохождения: мягкий, активный, социальный, творческий или дисциплинарный. от этого зависит темп заданий, сложность и способ поддержки внутри приложения'
-	},
-	{
-		image: 'assets/images/book-slide-4.png',
-		text: 'челлендж запускается не с большого обещания, а с маленького действия. приложение даёт первое задание, которое помогает почувствовать движение уже сегодня'
-	},
-	{
-		image: 'assets/images/book-slide-5.png',
-		text: 'финал челленджа — это момент, когда действие выходит за пределы экрана. новая привычка, навык или опыт становятся частью повседневной жизни'
-	}
-];
-
 class BookSlider {
 	constructor(selector, data) {
 		this.root = document.querySelector(selector);
@@ -246,4 +248,3 @@ class BookSlider {
 	}
 }
 
-new BookSlider('.book', bookData);
