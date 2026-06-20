@@ -22,6 +22,15 @@
     text-transform: uppercase;
     transition: box-shadow 0.3s ease;
 
+    &.is-current {
+      pointer-events: none;
+      background-color: #b391fc;
+      border: 1px solid #915ffb;
+      box-shadow: 2px -1px 9px 2px #cfcfcf66 inset;
+
+      box-shadow: 5px 4px 5px 0px #7a55ca inset;
+    }
+
     &--mobile {
       display: none;
     }

@@ -136,22 +136,6 @@ class StepsSlider {
 	}
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-	if (document.querySelector('.steps__slider')) {
-		new StepsSlider('.steps__slider');
-	}
-
-	if (document.querySelector('.book--js')) {
-		new BookSlider('.book--js', bookData);
-	}
-
-	const section = document.querySelector('.access');
-
-	if (section) {
-		new AccessForm(section);
-	}
-});
-
 class AccessForm {
   constructor(section) {
     this.section = section;
@@ -248,3 +232,99 @@ class BookSlider {
 	}
 }
 
+class RewardsSwitcher {
+	constructor(selector) {
+		this.root = document.querySelector(selector);
+
+		if (!this.root) return;
+
+		this.mainImage = this.root.querySelector('.rewards__main img');
+		this.mainName = this.root.querySelector('.rewards__name');
+		this.mainPrice = this.root.querySelector('.rewards__price');
+
+		this.items = this.root.querySelectorAll('.rewards__list-item');
+
+		this.init();
+	}
+
+	init() {
+		this.items.forEach(item => {
+			item.addEventListener('click', () => {
+				this.changeReward(item);
+			});
+		});
+	}
+
+	changeReward(item) {
+		// активная карточка
+		this.items.forEach(el => el.classList.remove('is-current'));
+		item.classList.add('is-current');
+
+		// данные карточки
+		const image = item.querySelector('img');
+		const name = item.querySelector('[data-elements="name"]');
+		const price = item.querySelector('[data-elements="price"]');
+
+		// обновление главного блока
+		if (image) {
+			this.mainImage.src = image.src;
+			this.mainImage.alt = image.alt;
+		}
+
+		if (name) {
+			this.mainName.textContent = name.textContent;
+		}
+
+		if (price) {
+			this.mainPrice.textContent = price.textContent;
+		}
+	}
+}
+
+class NavigationCurrent {
+	constructor(selector) {
+		this.nav = document.querySelector(selector);
+
+		if (!this.nav) return;
+
+		this.links = this.nav.querySelectorAll('.nav__link');
+
+		this.setCurrent();
+	}
+
+	setCurrent() {
+		const currentPath = window.location.pathname;
+
+		this.links.forEach(link => {
+			const linkPath = new URL(link.href).pathname;
+
+			link.classList.remove('is-current');
+
+			if (linkPath === currentPath) {
+				link.classList.add('is-current');
+			}
+		});
+	}
+}
+
+new NavigationCurrent('.nav');
+
+document.addEventListener('DOMContentLoaded', () => {
+	if (document.querySelector('.steps__slider')) {
+		new StepsSlider('.steps__slider');
+	}
+
+	if (document.querySelector('.rewards')) {
+		new RewardsSwitcher('.rewards');
+	}
+
+	if (document.querySelector('.book--js')) {
+		new BookSlider('.book--js', bookData);
+	}
+
+	const section = document.querySelector('.access');
+
+	if (section) {
+		new AccessForm(section);
+	}
+});
