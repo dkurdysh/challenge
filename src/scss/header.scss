@@ -56,12 +56,6 @@
   .header {
   }
 }
-
-@media #{vars.$xsmall} {
-  .header {
-  }
-}
-
 body.is-nav-open {
   overflow: hidden;
 

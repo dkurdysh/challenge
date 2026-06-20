@@ -21,29 +21,22 @@
       display: inline-block;
       padding: 30px;
       background-color: #fff;
-      color: #8f5cfb;
+
       font-weight: 800;
       font-size: 24px;
+      line-height: 100%;
       letter-spacing: -2%;
       text-align: center;
+      vertical-align: bottom;
+      text-transform: uppercase;
+      color: #8f5cfb;
+
       border-radius: 150px;
       box-shadow: 5px 3px 4px 0px #0000004d;
       margin-top: 40px;
       transition:
         color 0.3s,
         box-shadow 0.3s;
-    }
-  }
-}
-
-@media (hover: hover) {
-  .ready {
-    &__wrapper {
-      & a:hover {
-        box-shadow: 2px -1px 9px 2px #cfcfcf66 inset;
-        box-shadow: 5px 4px 5px 0px #0000004d inset;
-        color: #949494;
-      }
     }
   }
 }
