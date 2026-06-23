@@ -191,22 +191,35 @@
 @media #{vars.$xsmall} {
   .book {
     & h1 {
+      white-space: nowrap;
       font-weight: 600;
       font-size: 20px;
       line-height: 28px;
+      letter-spacing: -1%;
     }
 
     &__content {
       border-radius: 48px;
       padding: 20px;
       margin-top: 60px;
+
       &--lab {
         margin-top: 0;
+        padding-bottom: 40px;
       }
+    }
+
+    &__gallery {
+      width: calc(100% + 40px);
+      margin-left: -20px;
+      padding-left: 20px;
+      margin-right: -20px;
+      padding-right: 20px;
     }
 
     &__gallery-img {
       min-width: 300px;
+      border-radius: 24px;
     }
 
     &__list {
