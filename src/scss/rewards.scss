@@ -70,7 +70,8 @@
   }
 
   &__name {
-    width: 30%;
+    // width: 60%;
+    width: 348px;
   }
 
   &__price {
@@ -114,14 +115,15 @@
   &__list-item {
     width: calc(50% - 8px);
     aspect-ratio: 1;
-    border-radius: 40px;
+    border-radius: 50px;
     position: relative;
     overflow: hidden;
     border: 2px solid #ffffff80;
     transition: border-color 0.3s;
 
     & .rewards__shadow {
-      border-radius: 40px;
+      border-radius: 48px;
+      box-shadow: 5px 3px 4px 0px #0000004d inset;
     }
 
     & img {
@@ -142,6 +144,7 @@
     position: relative;
     z-index: 1;
     display: inline-block;
+    text-transform: uppercase;
     padding: 30px;
     background-color: #fff;
     color: #8f5cfb;
@@ -173,6 +176,10 @@
       border-radius: 80px;
       padding: 24px;
       box-shadow: 5px 3px 4px 0px #0000004d inset;
+    }
+
+    &__shadow {
+      border-radius: 56px;
     }
 
     &__mobile-caption,
@@ -221,6 +228,10 @@
       padding: 20px;
     }
 
+    &__shadow {
+      border-radius: 32px;
+    }
+
     &__main {
       padding: 24px;
       border-radius: 32px;
@@ -242,6 +253,10 @@
     &__list-item {
       min-height: 120px;
       border-radius: 24px;
+
+      & .rewards__shadow {
+        border-radius: 24px;
+      }
     }
 
     &__button--mobile {

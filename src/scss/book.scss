@@ -21,6 +21,17 @@
     overflow-x: scroll;
     width: 100%;
     gap: 16px;
+
+    /* Firefox */
+    scrollbar-width: none;
+
+    /* IE и старый Edge */
+    -ms-overflow-style: none;
+
+    /* Chrome, Safari, Opera */
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   &__gallery-img {
@@ -49,7 +60,7 @@
     border-radius: 80px;
     padding: 24px;
     gap: 16px;
-    box-shadow: 5px 3px 4px 0px #0000004d inset;
+    box-shadow: 5px 3px 13px 0px #00000040 inset;
   }
 
   &__text {
@@ -58,6 +69,9 @@
     font-size: 24px;
     line-height: 32px;
     letter-spacing: -1%;
+    padding-right: 170px;
+    padding-bottom: 80px;
+    text-transform: lowercase;
   }
 
   &__part {
@@ -109,6 +123,8 @@
   &__preview {
     position: relative;
     width: calc(70% - 8px);
+    min-height: 600px;
+    // aspect-ratio: 860 / 600;
 
     & img {
       position: absolute;
@@ -131,6 +147,9 @@
 
 @media #{vars.$small} {
   .book {
+    & h1 {
+      padding: 10px 0;
+    }
     &__gallery {
       gap: 12px;
     }
@@ -149,6 +168,7 @@
 
       &--lab {
         margin-top: 0;
+        padding: 24px;
       }
     }
 
@@ -177,13 +197,15 @@
 
     &__preview {
       width: 100%;
-      min-height: 480px;
+      min-height: 485px;
     }
 
     &__text {
       font-weight: 600;
       font-size: 24px;
       line-height: 32px;
+      padding-right: 40px;
+      padding-bottom: 64px;
     }
   }
 }
@@ -196,6 +218,7 @@
       font-size: 20px;
       line-height: 28px;
       letter-spacing: -1%;
+      padding: 0;
     }
 
     &__content {
@@ -244,6 +267,7 @@
       font-size: 16px;
       line-height: 20px;
       padding: 24px;
+      padding-bottom: 44px;
     }
   }
 }
@@ -252,6 +276,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  text-transform: uppercase;
   width: calc(100% - 40px);
   transform: translateX(20px);
   color: #8f5cfb;
@@ -266,13 +291,12 @@
   padding: 30px 0;
   transition:
     color 0.3s,
-    box-shadow 0.3s;
+    box-shadow 0.3s,
+    background-color 0.3s;
 }
 
 @media (hover: hover) {
   .link:hover {
-    box-shadow: 2px -1px 9px 2px #cfcfcf66 inset;
-    box-shadow: 5px 4px 5px 0px #0000004d inset;
-    color: #949494;
+    background-color: #eaeaea;
   }
 }

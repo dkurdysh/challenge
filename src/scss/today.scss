@@ -2,7 +2,7 @@
 @use "base/variables" as vars;
 
 .today {
-  padding: 100px 0;
+  padding: 100px 0 220px 0;
 
   &__wrapper {
     display: flex;
@@ -21,8 +21,15 @@
   }
 }
 
+@media #{vars.$small} {
+  .today {
+    padding: 110px 0 140px 0;
+  }
+}
+
 @media #{vars.$xsmall} {
   .today {
+    padding: 100px 0 144px 0;
     &__wrapper {
       gap: 12px;
 

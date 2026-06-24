@@ -72,7 +72,7 @@
 
   &__item-tooltip {
     position: absolute;
-    width: 300px;
+    width: 302px;
     text-align: center;
     color: #fff;
     display: flex;
@@ -90,7 +90,7 @@
     padding: 8px 16px;
     background-color: #fff;
     color: #8f5cfb;
-
+    margin-bottom: 12px;
     font-weight: 800;
     font-size: 24px;
     line-height: 100%;
@@ -98,7 +98,6 @@
     text-align: center;
     vertical-align: bottom;
     text-transform: uppercase;
-
     max-width: max-content;
     border-radius: 60px;
   }
@@ -110,6 +109,7 @@
     letter-spacing: -1%;
     text-align: center;
     vertical-align: bottom;
+    margin-bottom: 6px;
   }
 
   &__item-tooltip-text {
@@ -281,6 +281,7 @@
       text-align: center;
       vertical-align: bottom;
       text-transform: uppercase;
+      margin-bottom: 0;
     }
 
     &__item-tooltip-name {
@@ -290,6 +291,7 @@
       letter-spacing: -1%;
       text-align: center;
       vertical-align: bottom;
+      margin-bottom: 0;
     }
 
     &__item-tooltip-text {
